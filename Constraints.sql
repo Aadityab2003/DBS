@@ -1,0 +1,34 @@
+CREATE DATABASE Const;
+
+USE Const;
+
+
+CREATE TABLE SAMPLE
+(
+C_ID INT PRIMARY KEY,
+C_Name Varchar(60) NOT NULL,
+C_Number INT UNIQUE
+);
+
+
+Create TABLE Person
+(
+P_ID INT PRIMARY KEY,
+P_Name Varchar(60) NOT NULL,
+P_Number INT UNIQUE,
+C_ID INT, FOREIGN KEY (C_ID) REFERENCES SAMPLE(C_ID)
+  );
+
+INSERT INTO SAMPLE(C_id,C_Name,C_Number)
+VALUES
+(101,'Aaditya', 45876758 ),
+(102,'Prathmesh',1235455),
+(103,'Pravin',34345544),
+(104,'Chetan');
+
+INSERT INTO Person(P_ID,P_Number)
+VALUES
+(101,45000),
+(102,10000),
+(103, 25000),
+(104,30000);
